@@ -6,6 +6,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using WebserviceUwpWrapperTemplate;
+using Windows.UI.Core;
 
 namespace WebserviceUwpWrapperTemplate
 {
@@ -86,6 +87,10 @@ namespace WebserviceUwpWrapperTemplate
                 //マウスホバー時のタイトルバーに付随の最大・最小化ボタン、閉じるボタンの文字色、背景色の指定
                 titleBar.ButtonHoverForegroundColor = Windows.UI.Colors.White;
                 titleBar.ButtonHoverBackgroundColor = Windows.UI.Color.FromArgb(0xff, 0x1d, 0xca, 0xff);
+
+                //システムの戻るボタンを表示
+                //不要な場合はコメントアウトなど。
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
 
             }
         }
