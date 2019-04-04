@@ -1,4 +1,5 @@
 ﻿using System;
+using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 
 namespace WebserviceUwpWrapperTemplate
@@ -14,6 +15,16 @@ namespace WebserviceUwpWrapperTemplate
 
             //1．使用したいウェブアプリケーションのURLを指定。http://,https://から指定すること。
             WebView_Main.Navigate(new Uri("https://www.google.com"));
+
+            //システムの戻るボタンが押されたらWebviewのGoBackを実行する
+            SystemNavigationManager.GetForCurrentView().BackRequested += (_, args) =>
+            {
+                if(WebView_Main.CanGoBack)
+                {
+                    WebView_Main.GoBack();
+                    args.Handled = true;
+                }
+            };
         }
 
         private async void WebView_Main_OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
