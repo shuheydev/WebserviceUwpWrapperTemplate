@@ -13,7 +13,7 @@ namespace WebserviceUwpWrapperTemplate
         {
             this.InitializeComponent();
 
-            //1．使用したいウェブアプリケーションのURLを指定。http://,https://から指定すること。
+            //TODO:1．使用したいウェブアプリケーションのURLを指定。http://,https://から指定すること。
             WebView_Main.Navigate(new Uri("https://www.google.com"));
 
             //システムの戻るボタンが押されたらWebviewのGoBackを実行する

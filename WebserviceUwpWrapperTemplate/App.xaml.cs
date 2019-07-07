@@ -65,7 +65,7 @@ namespace WebserviceUwpWrapperTemplate
                 Window.Current.Activate();
 
 
-                //2．タイトルバーの色変更
+                //TODO:2．タイトルバーの色変更
                 //Window.Current。Activate()以降で行う必要がある。
                 var titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
